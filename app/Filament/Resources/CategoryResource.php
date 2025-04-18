@@ -93,6 +93,7 @@ class CategoryResource extends Resource
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
+            ->where('user_id', auth()->id())
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
             ]);
