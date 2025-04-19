@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'user_id',
@@ -17,4 +16,9 @@ class Category extends Model
         'is_expense',
         'image',
     ];
+
+    public function scopeOwnedByUser($query)
+    {
+        return $query->where('user_id', auth()->id());
+    }
 }

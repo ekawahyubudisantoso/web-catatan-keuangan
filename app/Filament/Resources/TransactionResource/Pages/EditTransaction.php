@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\CategoryResource\Pages;
+namespace App\Filament\Resources\TransactionResource\Pages;
 
 use Filament\Actions;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
-use App\Filament\Resources\CategoryResource;
+use App\Filament\Resources\TransactionResource;
 
-class EditCategory extends EditRecord
+class EditTransaction extends EditRecord
 {
-    protected static string $resource = CategoryResource::class;
+    protected static string $resource = TransactionResource::class;
 
     protected function getRedirectUrl(): string
     {
@@ -20,8 +20,8 @@ class EditCategory extends EditRecord
     {
         return Notification::make()
         ->success()
-        ->title('Category Edited')
-        ->body('The category has been edited successfully.');
+        ->title('Transaction Edited')
+        ->body('The transaction has been edited successfully.');
     }
 
     protected function getHeaderActions(): array
