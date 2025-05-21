@@ -33,7 +33,7 @@ class TransactionResource extends Resource
                         modifyQueryUsing: fn ($query) => $query->ownedByUser()
                     )
                     ->required(),
-                Forms\Components\DatePicker::make('date')
+                Forms\Components\DatePicker::make('date_transaction')
                     ->required(),
                 Forms\Components\TextInput::make('amount')
                     ->numeric()
@@ -65,7 +65,7 @@ class TransactionResource extends Resource
                 Tables\Columns\TextColumn::make('amount')
                     ->numeric()
                     ->money('IDR', locale: 'id'),
-                Tables\Columns\TextColumn::make('date')
+                Tables\Columns\TextColumn::make('date_transaction')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
